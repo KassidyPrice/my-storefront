@@ -7,7 +7,6 @@ export default function ProductPage() {
 
   function renderProducts() {
     return product.map((item) => {
-      console.log(item)
       return (
         <div className='card-btn-container'>
           <Product key={item.id} {...item} />
