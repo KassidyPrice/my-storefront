@@ -1,8 +1,9 @@
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Truncate from '../helpers/truncate'
 
 export default function Product(props) {
   return (
+    // <Link exact='true' to='/dashboard'>
     <div className='product-card'>
       <img src={props.image} alt='profile' />
       <h4>
@@ -16,5 +17,6 @@ export default function Product(props) {
         </Truncate>
       </p>
     </div>
+    // </Link>
   )
 }
