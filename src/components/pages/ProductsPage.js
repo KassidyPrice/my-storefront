@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Product from '../parts/Product'
-import CartBtn from '../buttons/CartBtn'
 import Header from '../parts/Header'
+import Footer from '../parts/Fotter'
 
 export default function ProductPage() {
   const [product, setProduct] = useState([])
@@ -11,7 +11,6 @@ export default function ProductPage() {
       return (
         <div className='card-btn-container'>
           <Product key={item.id} {...item} />
-          <CartBtn />
         </div>
       )
     })
@@ -34,6 +33,7 @@ export default function ProductPage() {
       <div className='product-card-wrapper'>
         {product.length > 0 ? renderProducts() : '...Loading'}
       </div>
+      <Footer />
     </div>
   )
 }

@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
-import CartBtn from '../buttons/CartBtn'
+import { CartContext } from '../../App'
 import Header from '../parts/Header'
 
 export default function SingleProductPage(props) {
   const [product, setProduct] = useState({})
   const [isLoading, setIsLoading] = useState(false)
+  const { setCart } = useContext(CartContext)
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${props.match.params.id}`)
@@ -20,6 +21,10 @@ export default function SingleProductPage(props) {
       })
   }, [])
 
+  function addProduct(product) {
+    setCart((c) => [...c, product])
+  }
+
   return (
     <div key={product.id}>
       <Header />
@@ -30,7 +35,7 @@ export default function SingleProductPage(props) {
         <p>{product.description}</p>
         <p>${product.price}</p>
         {/* <p>{`${product.rating.count} left in store`}</p> */}
-        <CartBtn />
+        <button onClick={() => addProduct(product)}>Add to Cart</button>
       </div>
     </div>
   )
