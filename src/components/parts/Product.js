@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import Truncate from '../helpers/truncate'
+import Truncate from '../../helpers/truncate'
 
 export default function Product(props) {
   return (

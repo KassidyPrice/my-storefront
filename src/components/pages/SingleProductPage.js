@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 
-import CartBtn from './CartBtn'
+import CartBtn from '../buttons/CartBtn'
+import Header from '../parts/Header'
 
 export default function SingleProductPage(props) {
   const [product, setProduct] = useState({})
@@ -20,16 +21,17 @@ export default function SingleProductPage(props) {
   }, [])
 
   return (
-    <div>
-      <h1>Product Data</h1>
-      <h3>Name: {product.title}</h3>
-      <img src={product.image} />
-      <p>{product.description}</p>
-      <p>${product.price}</p>
-      {/* <p>
-        {product.rating.count ? `${product.rating.count} left in store` : ''}
-      </p> */}
-      <CartBtn />
+    <div key={product.id}>
+      <Header />
+      <div>
+        <h1>Product Data</h1>
+        <h3>Name: {product.title}</h3>
+        <img src={product.image} />
+        <p>{product.description}</p>
+        <p>${product.price}</p>
+        {/* <p>{`${product.rating.count} left in store`}</p> */}
+        <CartBtn />
+      </div>
     </div>
   )
 }

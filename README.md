@@ -1,3 +1,44 @@
+/\*
+Capstone Soft Deadline: Wed 12/14
+
+Build an E-commerce App
+
+Using the create-react-app toolchain and SCSS, create an online storefront.
+Your products will come from the fake store api, linked below.
+Your store must include:
+
+- Home Page- add filter to the cards
+- Products Page
+  - add to cart - add functionality
+  - filters for the categories
+- Product Page (Show Route)
+  - Count- ask Ryan Monday
+  - add to cart -add functionality
+- Contact Page
+  - Nicely styled contact form elements
+  - This does not have to be functional, but wire up a notification that shows the user that the message was sent,
+    and it should clear the form after.
+- Responsive designs (just mobile and desktop is fine)
+- Cart Page
+  - You should be able to add products to your cart (if there is quantity available).
+  - Show the products in the cart, and price
+  - Show the total
+  - Checkout button (does not have to work)
+  - remove from cart
+- About Page
+  - Explain your capstone
+  - Explain what you learned throughout your time here
+  - Explain your favorite languages and why
+
+Technologies:
+Product API: https://fakestoreapi.com/docs
+React 17+
+Router: react-router-dom@5 library
+SCSS: sass npm library
+
+Keep UX in mind. Reference other sites and designs, and make this your own!
+\*/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
