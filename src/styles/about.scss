@@ -1,0 +1,15 @@
+.about-body {
+  z-index: -1;
+  overflow: auto;
+  position: absolute;
+  top: 130px;
+  bottom: 50px;
+  left: 0px;
+  right: 0px;
+  background-color: rgb(129, 59, 59);
+
+  p {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+}
