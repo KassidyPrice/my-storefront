@@ -1,13 +1,34 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Product from '../parts/Product'
 import Header from '../parts/Header'
 import Footer from '../parts/Fotter'
 
 export default function ProductPage() {
   const [product, setProduct] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState()
+
+  function handleCategoryChange(event) {
+    setSelectedCategory(event.target.value)
+  }
+
+  function getFilteredList() {
+    if (!selectedCategory) {
+      return product
+    }
+    return product.filter((item) => item.category === selectedCategory)
+  }
+
+  // const getFilteredList = useEffect(() => {
+  //   if (!selectedCategory) {
+  //     return product
+  //   }
+  //   return product.filter((item) => item.category === selectedCategory)
+  // })
+
+  let filteredList = useMemo(getFilteredList, [selectedCategory, product])
 
   function renderProducts() {
-    return product.map((item) => {
+    return filteredList.map((item) => {
       return (
         <div className='card-btn-container'>
           <Product key={item.id} {...item} />
@@ -20,6 +41,7 @@ export default function ProductPage() {
     fetch('https://fakestoreapi.com/products')
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         setProduct(data)
       })
       .catch((err) => {
@@ -30,8 +52,49 @@ export default function ProductPage() {
   return (
     <div>
       <Header />
-      <div className='product-card-wrapper'>
-        {product.length > 0 ? renderProducts() : '...Loading'}
+
+      <div className='product-page-body'>
+        <div className='filter-container'>
+          <div>
+            <input
+              type='checkbox'
+              id='women'
+              value="women's clothing"
+              onChange={handleCategoryChange}
+            />
+            <label for='women'> Women's Clothing</label>
+          </div>
+          <div>
+            <input
+              type='checkbox'
+              id='men'
+              value="men's clothing"
+              onChange={handleCategoryChange}
+            />
+            <label for='men'> Men's Clothing</label>
+          </div>
+          <div>
+            <input
+              type='checkbox'
+              id='Electonics'
+              value='electronics'
+              onChange={handleCategoryChange}
+            />
+            <label for='Electonics'> Electonics</label>
+          </div>
+          <div>
+            <input
+              type='checkbox'
+              id='jewelry'
+              value='jewelery'
+              onChange={handleCategoryChange}
+            />
+            <label for='jewelry'> Jewelry</label>
+          </div>
+        </div>
+        <div className='product-card-wrapper'>
+          {product.length > 0 ? renderProducts() : '...Loading'}
+        </div>
       </div>
       <Footer />
     </div>
