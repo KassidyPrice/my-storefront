@@ -1,0 +1,36 @@
+.single-product-body {
+  z-index: -1;
+  overflow: auto;
+  position: absolute;
+  top: 130px;
+  bottom: 50px;
+  left: 0px;
+  right: 0px;
+  background-color: rgb(129, 59, 59);
+  padding: 50px;
+
+  img {
+    width: 300px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  button {
+    background-color: rgb(248, 244, 239);
+    color: rgb(65, 15, 15);
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 7px 7px 5px 0px rgba(154, 113, 113, 0.35);
+
+    &:hover {
+      background-color: rgb(182, 96, 96);
+      color: rgb(248, 244, 239);
+      padding: 15px;
+      border: 1px solid rgb(65, 15, 15);
+    }
+  }
+}

@@ -17,12 +17,6 @@ export default function Header() {
         <NavLink to='/products-page' activeClassName='selected'>
           All Products
         </NavLink>
-        <NavLink to='/about' activeClassName='selected'>
-          About
-        </NavLink>
-        <NavLink to='/contact' activeClassName='selected'>
-          Contact Us
-        </NavLink>
         <NavLink to='/cart' activeClassName='selected'>
           Cart
         </NavLink>

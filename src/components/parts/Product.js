@@ -26,6 +26,7 @@ export default function Product(props) {
               {props.description}
             </Truncate>
           </p>
+          <p>${props.price}</p>
         </div>
       </Link>
       <button onClick={() => addProduct(props)}>Add to Cart</button>

@@ -62,7 +62,7 @@ export default function ProductPage() {
               value="women's clothing"
               onChange={handleCategoryChange}
             />
-            <label for='women'> Women's Clothing</label>
+            <label htmlFor='women'> Women's Clothing</label>
           </div>
           <div>
             <input
@@ -71,7 +71,7 @@ export default function ProductPage() {
               value="men's clothing"
               onChange={handleCategoryChange}
             />
-            <label for='men'> Men's Clothing</label>
+            <label htmlFor='men'> Men's Clothing</label>
           </div>
           <div>
             <input
@@ -80,7 +80,7 @@ export default function ProductPage() {
               value='electronics'
               onChange={handleCategoryChange}
             />
-            <label for='Electonics'> Electonics</label>
+            <label htmlFor='Electonics'> Electonics</label>
           </div>
           <div>
             <input
@@ -89,7 +89,7 @@ export default function ProductPage() {
               value='jewelery'
               onChange={handleCategoryChange}
             />
-            <label for='jewelry'> Jewelry</label>
+            <label htmlFor='jewelry'> Jewelry</label>
           </div>
         </div>
         <div className='product-card-wrapper'>

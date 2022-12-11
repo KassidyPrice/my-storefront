@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react'
 
 import { CartContext } from '../../App'
+import Footer from '../parts/Fotter'
 import Header from '../parts/Header'
 
 export default function SingleProductPage(props) {
@@ -28,15 +29,15 @@ export default function SingleProductPage(props) {
   return (
     <div key={product.id}>
       <Header />
-      <div>
-        <h1>Product Data</h1>
-        <h3>Name: {product.title}</h3>
+      <div className='single-product-body'>
+        <h1>{product.title}</h1>
         <img src={product.image} />
         <p>{product.description}</p>
         <p>${product.price}</p>
         {/* <p>{`${product.rating.count} left in store`}</p> */}
         <button onClick={() => addProduct(product)}>Add to Cart</button>
       </div>
+      <Footer />
     </div>
   )
 }
