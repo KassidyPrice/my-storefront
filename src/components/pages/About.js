@@ -6,13 +6,13 @@ export default function About() {
     <div className='about-body'>
       <Header />
       <p>
-        My Capstone is an E-Commerce website front end. I used React to build
-        it. I was able to practice React specific development using hooks and
-        React Router DOM. I also practiced more with Sass. I had a lot of fun,
-        and learned a lot with this project. I wasn't as intimidated by this
-        capstone as I was with the Fundementals capstone, but I was still very
-        anxious to get it finished. I'm pretty happy with how much I've been
-        able to strengthen my understanding of JS and React this semester.
+        My Capstone is an E-Commerce website front end. For this project I was
+        able to practice React specific development using hooks and React Router
+        DOM. I also practiced more with SCSS. I had a lot of fun, and learned a
+        lot with this project. I wasn't as intimidated by this capstone as I was
+        with the Development Fundementals capstone, but I was still very anxious
+        to get it finished. I'm pretty happy with how much I've been able to
+        strengthen my understanding of JS and React this semester.
       </p>
       <p>
         I've learned that development is really a perfect balance between using
@@ -27,7 +27,7 @@ export default function About() {
         My favorite language really depends on the day. Some days I feel like
         being analytical and solving functional problems. Some days I like to
         focus on the creative styling of the page. I've really enjoyed learning
-        React becasue it combines the functioanlity and style easier and quicker
+        React because it combines the functionality and style easier and quicker
         than the traditional HTML, JS, CSS framework. But I also like trying to
         figure things out in vanilla JS and playing with how powerful CSS can be
         on it's own, without the help of JS. I'm excited to learn more about the

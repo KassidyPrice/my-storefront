@@ -6,9 +6,15 @@ import Footer from '../parts/Fotter'
 export default function ProductPage() {
   const [product, setProduct] = useState([])
   const [selectedCategory, setSelectedCategory] = useState()
+  let filteredList = useMemo(getFilteredList, [selectedCategory, product])
+
+  // const toggleFilter = (cat) => setCategory((c) => (cat === c ? null : cat))
 
   function handleCategoryChange(event) {
-    setSelectedCategory(event.target.value)
+    setSelectedCategory(
+      event.target.value === selectedCategory ? null : event.target.value
+      // : [...prevState, event.target.value]
+    )
   }
 
   function getFilteredList() {
@@ -17,15 +23,6 @@ export default function ProductPage() {
     }
     return product.filter((item) => item.category === selectedCategory)
   }
-
-  // const getFilteredList = useEffect(() => {
-  //   if (!selectedCategory) {
-  //     return product
-  //   }
-  //   return product.filter((item) => item.category === selectedCategory)
-  // })
-
-  let filteredList = useMemo(getFilteredList, [selectedCategory, product])
 
   function renderProducts() {
     return filteredList.map((item) => {

@@ -57,7 +57,10 @@ export default function Cart() {
           <h2>Total: ${getTotal()}</h2>
           <button
             onClick={() =>
-              alert('Thank you for shopping at Old Mill Mercentile.')
+              alert(
+                'Thank you for shopping at Old Mill Mercentile.',
+                setCart([])
+              )
             }
           >
             Checkout
