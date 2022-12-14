@@ -6,7 +6,7 @@ import Header from '../parts/Header'
 
 export default function SingleProductPage(props) {
   const [product, setProduct] = useState({})
-  const [isLoading, setIsLoading] = useState(false)
+  const [count, setCount] = useState()
   const { setCart } = useContext(CartContext)
 
   useEffect(() => {
@@ -16,6 +16,7 @@ export default function SingleProductPage(props) {
         console.log(data)
 
         setProduct(data)
+        setCount(data.rating.count)
       })
       .catch((err) => {
         console.error('Character fetch error: ', err)
@@ -24,6 +25,7 @@ export default function SingleProductPage(props) {
 
   function addProduct(product) {
     setCart((c) => [...c, product])
+    setCount((prevState) => (prevState > 1 ? prevState - 1 : null))
   }
 
   return (
@@ -34,7 +36,7 @@ export default function SingleProductPage(props) {
         <img src={product.image} />
         <p>{product.description}</p>
         <p>${product.price}</p>
-        {/* <p>{`${product.rating.count} left in store`}</p> */}
+        <p>{count === null ? 'OUT OF STOCK' : `${count} left in store`}</p>
         <button onClick={() => addProduct(product)}>Add to Cart</button>
       </div>
       <Footer />
